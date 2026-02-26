@@ -48,6 +48,7 @@ h1 {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
+  border-left: 4px solid transparent;
 }
 
 .task-item span {
@@ -56,4 +57,18 @@ h1 {
 
 .buttons button {
   margin-left: 5px;
+  padding: 5px 10px;
+}
+
+
+.task-item[data-priority="High"] {
+  border-left: 4px solid red;
+}
+
+.task-item[data-priority="Medium"] {
+  border-left: 4px solid orange;
+}
+
+.task-item[data-priority="Low"] {
+  border-left: 4px solid green;
 }

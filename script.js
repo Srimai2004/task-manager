@@ -3,6 +3,7 @@ const priorityInput = document.getElementById("priorityInput");
 const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
 
+// Load tasks from localStorage or empty array
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 // Save to localStorage
@@ -17,6 +18,9 @@ function renderTasks() {
   tasks.forEach((task, index) => {
     const li = document.createElement("li");
     li.className = "task-item";
+
+    // ✅ THIS IS IMPORTANT FOR PRIORITY COLORS
+    li.setAttribute("data-priority", task.priority);
 
     li.innerHTML = `
       <span>${task.title} (${task.priority})</span>
